@@ -31,3 +31,10 @@ The application allows users to submit suggestions for improvements in the compa
 
 25.01.2024
 - create simple frontend with registration and login forms communicating with backend endpoints: 4 pts.
+
+
+
+TODO:
+- registration form validation on frontend
+- display message to a user during registration if name or email are already taken
+- display message to a user during login if credentials are invalid

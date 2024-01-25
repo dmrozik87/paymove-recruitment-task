@@ -19,7 +19,7 @@ const Homepage = () => {
                 variant="primary"
                 onClick={() => navigate('/login')}
             >
-                Login
+                Enter
             </Button>
         </Container>
     )
