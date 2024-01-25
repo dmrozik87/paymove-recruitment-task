@@ -13,8 +13,8 @@ const Login = () => {
     function sendLoginRequest() {
 
         const requestBody = {
-            "username" : username,
-            "password" : password
+            "username": username,
+            "password": password
         }
 
         fetch("http://localhost:8080/auth/authenticate", {
@@ -31,15 +31,16 @@ const Login = () => {
                             localStorage.setItem("jwt", "Bearer " + data.token);
                             localStorage.setItem("userId", data.userId);
                             localStorage.setItem("role", data.role);
-                            console.log("Registration successful");
+                            localStorage.setItem("name", data.name);
+                            console.log("Login successful");
                             navigate("/dashboard");
                         })
-                }
-                else {
+                } else {
                     console.log("Invalid Credentials")
                 }
             })
     }
+
     return (
         <Container className="mt-5 w-25">
             <Form>
@@ -64,6 +65,8 @@ const Login = () => {
                 </Form.Group>
 
                 <Button onClick={sendLoginRequest}>Login</Button>
+                <p className="mt-5 text-center">If you don't have an account, <br/><a href="/register">please
+                    register</a></p>
             </Form>
         </Container>
     )

@@ -6,7 +6,6 @@ import Login from "./components/login/login.js"
 import Register from "./components/register/register.js"
 import PrivateRoute from "./components/privateRoute/privateRoute";
 
-
 function App() {
     return (
         <Routes>

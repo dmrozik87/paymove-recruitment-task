@@ -1,7 +1,12 @@
+import Navigation from "../navigation/navigation";
+
 const ReviewerDashboard = () => {
 
     return (
-        <h1>Reviewer</h1>
+        <>
+            <Navigation/>
+            <h1>Reviewer</h1>
+        </>
     )
 }
 

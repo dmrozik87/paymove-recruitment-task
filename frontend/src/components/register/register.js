@@ -14,9 +14,9 @@ const Register = () => {
     function sendRegisterRequest() {
 
         const requestBody = {
-            "username" : username,
-            "email" : email,
-            "password" : password
+            "username": username,
+            "email": email,
+            "password": password
         }
 
         fetch("http://localhost:8080/auth/register", {
@@ -33,11 +33,11 @@ const Register = () => {
                             localStorage.setItem("jwt", "Bearer " + data.token);
                             localStorage.setItem("userId", data.userId);
                             localStorage.setItem("role", data.role);
+                            localStorage.setItem("name", data.name);
                             console.log("Registration successful");
+                            navigate("/dashboard")
                         })
-                    navigate("/login")
-                }
-                else {
+                } else {
                     console.log("Username or email already exists")
                 }
             })

@@ -1,7 +1,12 @@
+import Navigation from "../navigation/navigation";
+
 const AdminPanel = () => {
 
     return (
-        <h1>Admin</h1>
+        <>
+            <Navigation/>
+            <h1>Admin</h1>
+        </>
     )
 }
 
