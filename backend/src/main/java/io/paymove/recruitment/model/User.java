@@ -23,7 +23,7 @@ import java.util.UUID;
 @Builder
 public class User implements UserDetails {
     @Id
-    private UUID usedId = UUID.randomUUID();
+    private UUID userId = UUID.randomUUID();
     @NotBlank(message = "name is mandatory")
     private String userName;
     @NotBlank(message = "email is mandatory")

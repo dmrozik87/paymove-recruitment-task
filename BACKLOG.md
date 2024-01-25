@@ -30,12 +30,12 @@ The application allows users to submit suggestions for improvements in the compa
   - configure security
 
 25.01.2024
-- create simple frontend with registration and login forms communicating with backend endpoints: 4 pts.
+- create simple frontend with registration and login forms communicating with backend endpoints: 3 pts.
 - create dashboard mockups for each role and configure routing: 2 pts.
-- create endpoints for admin:
+- create endpoints for admin: 2 pts.
   - getting all users
   - changing user role
-- create frontend for admin panel:
+- create frontend for admin panel: 1 pt.
   - create table with users
   - allow to change user roles and persist change in DB
 
