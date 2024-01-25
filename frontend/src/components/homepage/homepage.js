@@ -7,12 +7,12 @@ const Homepage = () => {
     const navigate = useNavigate();
 
     return (
-        <Container>
-            <Row>
+        <Container className="d-flex flex-column justify-content-center align-items-center viewport-height">
+            <Row className="mb-3">
                 <Col><h1>Welcome to Improvement Proposal App</h1></Col>
             </Row>
-            <Row>
-                <Col><h3>Application created for Paymove recruitment process</h3></Col>
+            <Row className="mb-3">
+                <Col><h4>Application created for Paymove recruitment process</h4></Col>
             </Row>
             <Button
                 variant="primary"

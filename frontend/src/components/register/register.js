@@ -44,8 +44,8 @@ const Register = () => {
     }
 
     return (
-        <Container className="mt-5 w-25">
-            <Form>
+        <Container className="d-flex justify-content-center align-items-center viewport-height">
+            <Form className="w-25">
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -76,7 +76,7 @@ const Register = () => {
                     />
                 </Form.Group>
 
-                <Button onClick={sendRegisterRequest}>Create account</Button>
+                <Button className="w-100" onClick={sendRegisterRequest}>Create account</Button>
             </Form>
         </Container>
     )

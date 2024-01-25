@@ -42,8 +42,8 @@ const Login = () => {
     }
 
     return (
-        <Container className="mt-5 w-25">
-            <Form>
+        <Container className="d-flex justify-content-center align-items-center viewport-height">
+            <Form className="w-25">
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -64,9 +64,10 @@ const Login = () => {
                     />
                 </Form.Group>
 
-                <Button onClick={sendLoginRequest}>Login</Button>
+                <Button className="w-100" onClick={sendLoginRequest}>Login</Button>
                 <p className="mt-5 text-center">If you don't have an account, <br/><a href="/register">please
                     register</a></p>
+
             </Form>
         </Container>
     )

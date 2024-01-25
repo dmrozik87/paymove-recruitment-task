@@ -32,6 +32,12 @@ The application allows users to submit suggestions for improvements in the compa
 25.01.2024
 - create simple frontend with registration and login forms communicating with backend endpoints: 4 pts.
 - create dashboard mockups for each role and configure routing: 2 pts.
+- create endpoints for admin:
+  - getting all users
+  - changing user role
+- create frontend for admin panel:
+  - create table with users
+  - allow to change user roles and persist change in DB
 
 
 
