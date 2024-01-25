@@ -1,5 +1,6 @@
 package io.paymove.recruitment.auth;
 
+import io.paymove.recruitment.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,5 +14,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class AuthenticationResponse {
     private String token;
-    private UUID userID;
+    private UUID userId;
+    private Role role;
 }

@@ -28,3 +28,6 @@ The application allows users to submit suggestions for improvements in the compa
   - create authenticate endpoint
   - create models for register and authentication requests and responses
   - configure security
+
+25.01.2024
+- create simple frontend with registration and login forms communicating with backend endpoints: 4 pts.
