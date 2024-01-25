@@ -4,6 +4,8 @@ import {Route, Routes} from "react-router-dom";
 import Homepage from "./components/homepage/homepage.js";
 import Login from "./components/login/login.js"
 import Register from "./components/register/register.js"
+import PrivateRoute from "./components/privateRoute/privateRoute";
+
 
 function App() {
     return (
@@ -11,6 +13,7 @@ function App() {
             <Route path="/" element={<Homepage/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
+            <Route path="/dashboard" element={<PrivateRoute/>}/>
         </Routes>
     );
 }

@@ -32,8 +32,8 @@ const Login = () => {
                             localStorage.setItem("userId", data.userId);
                             localStorage.setItem("role", data.role);
                             console.log("Registration successful");
+                            navigate("/dashboard");
                         })
-                    navigate("/dashboard")
                 }
                 else {
                     console.log("Invalid Credentials")

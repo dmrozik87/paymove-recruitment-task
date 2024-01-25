@@ -1,6 +1,5 @@
-// import {Button} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import Button from "react-bootstrap/Button"
 import {Col, Container, Row} from "react-bootstrap";
 
 const Homepage = () => {
