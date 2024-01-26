@@ -39,6 +39,18 @@ The application allows users to submit suggestions for improvements in the compa
   - create table with users
   - allow to change user roles and persist change in DB
 
+26.01.2024
+- create ImprovementProposal and Comment entities: 1 pt.
+- create endpoints:
+  - to create IP
+  - to get IP by userId
+  - to get IP by ipId
+  - to get IPs for reviewer
+  - to create comment
+  - to update comment
+  - to get comments by ipId
+  - to delete comment
+
 
 
 TODO:

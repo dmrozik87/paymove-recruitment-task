@@ -8,10 +8,10 @@ const Navigation = () => {
     const navigate = useNavigate();
 
     function handleLogout() {
-        localStorage.setItem("jwt", "");
-        localStorage.setItem("userId", "");
-        localStorage.setItem("role", "");
-        localStorage.setItem("name", "");
+        localStorage.removeItem("jwt");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("role");
+        localStorage.removeItem("name");
         navigate("/");
     }
 

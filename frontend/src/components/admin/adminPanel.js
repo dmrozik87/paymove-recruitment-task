@@ -49,11 +49,13 @@ const AdminPanel = () => {
     }
 
     function updateUsersData(userId, newRole) {
-        const currentUsersData = [...usersData];
-        let index = currentUsersData.map(user => user.userId).indexOf(userId);
-
-        currentUsersData[index].role = newRole;
-        setUsersData(currentUsersData);
+        const modifiedUsersData = [...usersData].map(user => {
+            if (user.userId === userId) {
+                return {...user, role: newRole}
+            }
+            return user;
+        })
+        setUsersData(modifiedUsersData);
     }
 
     return (
