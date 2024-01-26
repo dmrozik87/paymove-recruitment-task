@@ -1,9 +1,9 @@
-import SubmitterDashboard from "../submitter/submitterDashboard";
-import ReviewerDashboard from "../reviewer/reviewerDashboard";
+import SubmitterDashboard from "../submitterDashboard/submitterDashboard";
+import ReviewerDashboard from "../reviewerDashboard/reviewerDashboard";
 import AdminPanel from "../admin/adminPanel";
 import NoAuthorization from "../noAuthorization/noAuthorization";
 
-const PrivateRoute = () => {
+const Dashboard = () => {
     const role = localStorage.getItem("role")
 
     switch (role) {
@@ -18,4 +18,4 @@ const PrivateRoute = () => {
     }
 };
 
-export default PrivateRoute;
+export default Dashboard;
