@@ -10,4 +10,6 @@ import java.util.UUID;
 public interface ImprovementProposalRepository extends JpaRepository<ImprovementProposal, UUID> {
     Set<ImprovementProposal> findImprovementProposalsByUser(User user);
 
+    Set<ImprovementProposal> findImprovementProposalByStatusEqualsOrReviewer(String status, User reviewer);
+
 }

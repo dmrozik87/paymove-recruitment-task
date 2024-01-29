@@ -47,5 +47,8 @@ public class ImprovementProposalController {
         return ResponseEntity.ok(null);
     }
 
-
+    @GetMapping("/for-review/{reviewerId}")
+    public ResponseEntity<?> getImprovementProposalsForReviewer(@PathVariable UUID reviewerId) {
+        return ResponseEntity.ok(improvementProposalService.getImprovementProposalForReviewer(reviewerId));
+    }
 }
