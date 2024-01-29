@@ -6,6 +6,7 @@ import Login from "./components/login/login.js"
 import Register from "./components/register/register.js"
 import Dashboard from "./components/dashboard/dashboard";
 import SubmitterIpView from "./components/submitterIpView/submitterIpView";
+import ReviewerIpView from "./components/reviewerIpView/reviewerIpView";
 
 function App() {
 
@@ -18,9 +19,9 @@ function App() {
             <Route path="/improvement-proposals/:ipId"
                    element={
                        localStorage.getItem("role") === "SUBMITTER" ?
-                           <SubmitterIpView></SubmitterIpView>
+                           <SubmitterIpView/>
                            :
-                           <></>
+                           <ReviewerIpView/>
                    }/>
         </Routes>
     );

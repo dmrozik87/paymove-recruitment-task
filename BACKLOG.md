@@ -55,18 +55,22 @@ The application allows users to submit suggestions for improvements in the compa
     - to get IPs for reviewer
 - create frontend: 5 pts.
     - submitter dashboard
-    - IP submitter view
+    - submitter IP view
 
 #### 29.01.2024
 
-- create frontend: 4 pts.
+- create frontend: 3 pts.
     - reviewer dashboard
-    - IP reviewer view
+    - reviewer IP view
+
+#### 30.01.2024
 - create endpoints: 2 pts.
     - to create comment
     - to update comment
     - to get comments by ipId
     - to delete comment
+- create frontend for comment section: 4 pts.
+- update IP status change logic: 2 pts.
 
 #### TODO:
 

@@ -2,8 +2,9 @@ import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import {Button, Container, Form} from "react-bootstrap";
 import Navigation from "../navigation/navigation";
+import {departments} from "../../utils/utils";
 
-const SubmitterIpView = () => {
+const ReviewerIpView = () => {
 
     const [improvementProposal, setImprovementProposal] = useState({});
 
@@ -65,8 +66,10 @@ const SubmitterIpView = () => {
                         <Form.Group className="mb-3">
                             <Form.Label>Title</Form.Label>
                             <Form.Control
-                                disabled={true}
-                                value={improvementProposal.title === null ? undefined : improvementProposal.title}
+                                disabled={improvementProposal.status !== "Pending Submission"}
+                                placeholder="Enter title"
+                                value={improvementProposal.title === null ? "" : improvementProposal.title}
+                                onChange={(event) => updateImprovementProposal("title", event.target.value)}
                             />
                         </Form.Group>
 
@@ -74,7 +77,7 @@ const SubmitterIpView = () => {
                             <Form.Label>Status</Form.Label>
                             <Form.Control
                                 disabled={true}
-                                value={improvementProposal.status === null ? undefined : improvementProposal.status}
+                                value={improvementProposal.status}
                             />
                         </Form.Group>
 
@@ -84,17 +87,27 @@ const SubmitterIpView = () => {
                             <Form.Select
                                 disabled={improvementProposal.status !== "Pending Submission"}
                                 value={improvementProposal.department === null ? undefined : improvementProposal.department}
+                                onChange={(event) => updateImprovementProposal("department", event.target.value)}
                             >
+                                <option>Select department</option>
+                                {departments.map(department => {
+                                        return (
+                                            <option key={department} value={department}>{department}</option>
+                                        )
+                                    }
+                                )}
                             </Form.Select>
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Label>Description</Form.Label>
                             <Form.Control
-                                disabled={true}
+                                disabled={improvementProposal.status !== "Pending Submission" && improvementProposal.status !== "Needs Update"}
                                 as="textarea"
                                 rows={5}
+                                placeholder="Enter description"
                                 value={improvementProposal.description === null ? undefined : improvementProposal.description}
+                                onChange={(event) => updateImprovementProposal("description", event.target.value)}
                             />
                         </Form.Group>
                         <Form.Group className="d-flex justify-content-between">
@@ -117,4 +130,4 @@ const SubmitterIpView = () => {
     )
 }
 
-export default SubmitterIpView;
+export default ReviewerIpView;
