@@ -13,6 +13,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.function.Function;
 
+/**
+ * Class related to generating and extracting data from JWT
+ */
 @Service
 public class JwtService {
 

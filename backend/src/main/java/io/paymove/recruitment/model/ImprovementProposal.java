@@ -7,6 +7,9 @@ import lombok.*;
 
 import java.util.UUID;
 
+/**
+ * Class modeling ImprovementProposal entity
+ */
 @Entity
 @Getter
 @Setter

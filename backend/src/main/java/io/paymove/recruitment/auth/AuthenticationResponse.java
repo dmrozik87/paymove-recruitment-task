@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Class that models data sent to frontend with user data and JWT
+ */
 @Data
 @Builder
 @AllArgsConstructor

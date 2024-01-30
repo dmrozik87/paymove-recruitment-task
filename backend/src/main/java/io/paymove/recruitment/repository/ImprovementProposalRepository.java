@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * Repository class extending JpaRepository to manipulate ImprovementProposal entity
+ */
 public interface ImprovementProposalRepository extends JpaRepository<ImprovementProposal, UUID> {
     Set<ImprovementProposal> findImprovementProposalsByUser(User user);
 

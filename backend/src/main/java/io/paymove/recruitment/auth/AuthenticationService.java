@@ -10,6 +10,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service class for encapsulating logic related to user creation and user authentication.
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
@@ -19,6 +22,11 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+    /**
+     * Method creates new user if user with given name or email doesn't exist
+     * @param request Object with data necessary to create new user
+     * @return Object with data necessary for frontend
+     */
     public AuthenticationResponse register(RegisterRequest request) {
 
         boolean userExists = userRepository.existsByUserNameOrUserEmail(request.getUsername(), request.getEmail());
@@ -42,6 +50,11 @@ public class AuthenticationService {
                 .build();
     }
 
+    /**
+     * Validates credentials to authenticate user
+     * @param request Object with data necessary to authenticate user
+     * @return Object with data necessary for frontend
+     */
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())

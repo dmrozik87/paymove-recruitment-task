@@ -13,6 +13,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Class modeling User entity
+ */
 @Entity
 @Table(name = "users")
 @Getter

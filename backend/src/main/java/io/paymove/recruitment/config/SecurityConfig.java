@@ -16,6 +16,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.List;
 
+/**
+ * Configuration class to configure security parameters: roles required to access various paths, cors etc.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor

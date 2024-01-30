@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * Repository class extending JpaRepository to manipulate Comment entity
+ */
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, UUID> {
 
