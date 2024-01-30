@@ -48,7 +48,7 @@ public class ImprovementProposalService {
         improvementProposalRepository.deleteById(ipId);
     }
 
-    public Set<ImprovementProposal> getImprovementProposalForReviewer(UUID reviewerId) {
+    public Set<ImprovementProposal> getImprovementProposalsForReviewer(UUID reviewerId) {
         User reviewer = userRepository.findById(reviewerId).get();
         return improvementProposalRepository.findImprovementProposalByStatusEqualsOrReviewer("Submitted", reviewer);
     }
