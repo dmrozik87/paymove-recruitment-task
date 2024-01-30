@@ -1,0 +1,7 @@
+io.paymove.recruitment
+io.paymove.recruitment.auth
+io.paymove.recruitment.config
+io.paymove.recruitment.controller
+io.paymove.recruitment.model
+io.paymove.recruitment.repository
+io.paymove.recruitment.service

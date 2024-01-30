@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"io.paymove.recruitment"},{"l":"io.paymove.recruitment.auth"},{"l":"io.paymove.recruitment.config"},{"l":"io.paymove.recruitment.controller"},{"l":"io.paymove.recruitment.model"},{"l":"io.paymove.recruitment.repository"},{"l":"io.paymove.recruitment.service"}];updateSearchResults();
