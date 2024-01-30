@@ -12,7 +12,7 @@ const Navigation = () => {
         localStorage.removeItem("userId");
         localStorage.removeItem("role");
         localStorage.removeItem("name");
-        navigate("/");
+        navigate("/login");
     }
 
     return (

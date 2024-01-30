@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Button, Container, Table} from "react-bootstrap";
 import {finishedStatuses} from "../../utils/utils";
+import StatusBadge from "../statusBadge/statusBadge";
 
 const ReviewerDashboard = () => {
 
@@ -76,7 +77,7 @@ const ReviewerDashboard = () => {
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>
@@ -113,7 +114,7 @@ const ReviewerDashboard = () => {
                         </tr>
                         :
                         improvementProposals.filter(ip => ip.status === "Submitted" || ip.status === "Resubmitted")
-                            .sort((a, b) => {
+                            .sort(a => {
                                 if (a.status === "Resubmitted") return -1;
                                 else return 1;
                             })
@@ -122,7 +123,7 @@ const ReviewerDashboard = () => {
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>
@@ -155,16 +156,12 @@ const ReviewerDashboard = () => {
                         </tr>
                         :
                         improvementProposals.filter(ip => ip.status === "Needs Update")
-                            .sort((a, b) => {
-                                if (a.status === "Resubmitted") return -1;
-                                else return 1;
-                            })
                             .map(ip => {
                                 return (
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>
@@ -200,7 +197,7 @@ const ReviewerDashboard = () => {
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>

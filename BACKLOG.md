@@ -6,9 +6,10 @@ The application allows users to submit suggestions for improvements in the compa
 
 - user can create an account by providing a username, e-mail address and password
 - default user role is "submitter" (a person who submits improvement proposals)
-- user role can be changed by admin to "reviewer" (a person who review submitted improvement proposals)
+- user role can be changed by admin to "reviewer" (a person who reviews submitted improvement proposals)
 - submitter can submit improvement proposal
-- reviewer can review improvement proposals: he can approve, reject or send it for correction
+- reviewer can review improvement proposals: he can comment and approve, reject or send it for correction
+- improvement proposals sent for correction can be corrected and resubmitted by submitter
 - admin can change users roles
 
 ## BACKLOG
@@ -65,10 +66,8 @@ The application allows users to submit suggestions for improvements in the compa
 
 #### 30.01.2024
 - create endpoints: 2 pts.
-    - to create comment
-    - to update comment
-    - to get comments by ipId
-    - to delete comment
+    - to create comment    
+    - to get comments by ipId    
 - create frontend for comment section: 4 pts.
 - update IP status change logic: 2 pts.
 

@@ -34,6 +34,7 @@ const Login = () => {
                             localStorage.setItem("name", data.name);
                             console.log("Login successful");
                             navigate("/dashboard");
+                            window.location.reload();
                         })
                 } else {
                     console.log("Invalid Credentials")

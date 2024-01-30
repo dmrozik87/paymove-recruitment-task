@@ -3,6 +3,7 @@ import {Button, Container, Table} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {finishedStatuses} from "../../utils/utils";
+import StatusBadge from "../statusBadge/statusBadge";
 
 const SubmitterDashboard = () => {
 
@@ -80,7 +81,7 @@ const SubmitterDashboard = () => {
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>
@@ -121,7 +122,7 @@ const SubmitterDashboard = () => {
                                     <tr key={ip.ipId}>
                                         <td>{ip.title}</td>
                                         <td>{ip.department}</td>
-                                        <td>{ip.status}</td>
+                                        <td><StatusBadge text={ip.status}/></td>
                                         <td className="d-flex justify-content-around">
                                             <Button size="sm"
                                                     onClick={() => navigate(`/improvement-proposals/${ip.ipId}`)}>View</Button>

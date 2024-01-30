@@ -2,11 +2,13 @@ import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import {Button, Container, Form} from "react-bootstrap";
 import Navigation from "../navigation/navigation";
-import {departments} from "../../utils/utils";
+import CommentSection from "../commentSection/commentSection";
+import StatusBadge from "../statusBadge/statusBadge";
 
 const ReviewerIpView = () => {
 
     const [improvementProposal, setImprovementProposal] = useState({});
+    const [author, setAuthor] = useState({});
 
     const {ipId} = useParams();
     const navigate = useNavigate();
@@ -20,7 +22,10 @@ const ReviewerIpView = () => {
             }
         })
             .then(response => response.json())
-            .then(ipData => setImprovementProposal(ipData))
+            .then(ipData => {
+                setImprovementProposal(ipData)
+                setAuthor(ipData.user)
+            })
     }, []);
 
     useEffect(() => {
@@ -51,80 +56,76 @@ const ReviewerIpView = () => {
             .then(ipData => setImprovementProposal(ipData))
     }
 
-    function changeStatusAndSubmit() {
-        if (improvementProposal.status === "Pending Submission") {
-            updateImprovementProposal("status", "Submitted");
-        }
-    }
-
     return (
         <>
             <Navigation/>
-            <Container className="d-flex justify-content-center align-items-center viewport-height">
-                {improvementProposal ?
-                    <Form className="w-25">
-                        <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
-                            <Form.Control
-                                disabled={improvementProposal.status !== "Pending Submission"}
-                                placeholder="Enter title"
-                                value={improvementProposal.title === null ? "" : improvementProposal.title}
-                                onChange={(event) => updateImprovementProposal("title", event.target.value)}
-                            />
-                        </Form.Group>
+            <Container className="d-flex">
+                <Container className="d-flex justify-content-center align-items-center viewport-height">
+                    {improvementProposal ?
+                        <Form className="w-75">
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Status</Form.Label>
-                            <Form.Control
-                                disabled={true}
-                                value={improvementProposal.status}
-                            />
-                        </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Created by</Form.Label>
+                                <Form.Control
+                                    disabled={true}
+                                    value={author.username || ""}
+                                />
+                            </Form.Group>
 
+                            <Form.Group className="mb-3">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control
+                                    disabled={true}
+                                    value={improvementProposal.title || ""}
+                                />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Department</Form.Label>
-                            <Form.Select
-                                disabled={improvementProposal.status !== "Pending Submission"}
-                                value={improvementProposal.department === null ? undefined : improvementProposal.department}
-                                onChange={(event) => updateImprovementProposal("department", event.target.value)}
-                            >
-                                <option>Select department</option>
-                                {departments.map(department => {
-                                        return (
-                                            <option key={department} value={department}>{department}</option>
-                                        )
-                                    }
-                                )}
-                            </Form.Select>
-                        </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Status</Form.Label>
+                                <p><StatusBadge text={improvementProposal.status}/></p>
+                            </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Description</Form.Label>
-                            <Form.Control
-                                disabled={improvementProposal.status !== "Pending Submission" && improvementProposal.status !== "Needs Update"}
-                                as="textarea"
-                                rows={5}
-                                placeholder="Enter description"
-                                value={improvementProposal.description === null ? undefined : improvementProposal.description}
-                                onChange={(event) => updateImprovementProposal("description", event.target.value)}
-                            />
-                        </Form.Group>
-                        <Form.Group className="d-flex justify-content-between">
-                            {improvementProposal.status === "Pending Submission" || improvementProposal.status === "Needs Update" ?
-                                <>
-                                    <Button onClick={() => sendSaveRequest()}>Save</Button>
-                                    <Button onClick={() => changeStatusAndSubmit()}>Submit</Button>
-                                </>
-                                :
-                                ""
-                            }
-                            <Button onClick={() => navigate("/dashboard")}>Back</Button>
-                        </Form.Group>
-                    </Form>
-                    :
-                    <h1>Loading</h1>
-                }
+                            <Form.Group className="mb-3">
+                                <Form.Label>Department</Form.Label>
+                                <Form.Select
+                                    disabled={true}
+                                >
+                                    <option>{improvementProposal.department || ""}</option>
+                                </Form.Select>
+                            </Form.Group>
+
+                            <Form.Group className="mb-3">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control
+                                    disabled={true}
+                                    as="textarea"
+                                    rows={5}
+                                    value={improvementProposal.description || ""}
+                                />
+                            </Form.Group>
+
+                            <Form.Group className="d-flex justify-content-between">
+                                {improvementProposal.status === "In Review" ?
+                                    <>
+                                        <Button onClick={() => updateImprovementProposal("status", "Completed")}>Complete
+                                            Review</Button>
+                                        <Button onClick={() => updateImprovementProposal("status", "Needs Update")}
+                                                variant="warning">Send to Update</Button>
+                                        <Button onClick={() => updateImprovementProposal("status", "Rejected")}
+                                                variant="danger">Reject</Button>
+                                    </>
+                                    :
+                                    ""
+                                }
+                                <Button onClick={() => navigate("/dashboard")} variant="secondary">Back</Button>
+                            </Form.Group>
+                        </Form>
+                        :
+                        <h1>Loading</h1>
+                    }
+
+                </Container>
+                <CommentSection ipId={ipId} ipStatus={improvementProposal.status}/>
             </Container>
         </>
     )
