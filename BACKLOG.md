@@ -74,12 +74,12 @@ The application allows users to submit suggestions for improvements in the compa
 
 #### 31.01.2024
 
-- create modals to: 1 pts.
+- create modals to: 1 pt.
     - display message to a user during login if credentials are invalid
     - display message to a user during registration if name or email are already taken
+- create README.md: 1 pt.
 
 #### TODO:
 
-- create README.md
 - registration form validation on frontend 4 pts.
 
