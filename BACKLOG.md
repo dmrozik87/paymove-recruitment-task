@@ -65,14 +65,21 @@ The application allows users to submit suggestions for improvements in the compa
     - reviewer IP view
 
 #### 30.01.2024
+
 - create endpoints: 2 pts.
-    - to create comment    
-    - to get comments by ipId    
+    - to create comment
+    - to get comments by ipId
 - create frontend for comment section: 4 pts.
 - update IP status change logic: 2 pts.
 
+#### 31.01.2024
+
+- create modals to: 1 pts.
+    - display message to a user during login if credentials are invalid
+    - display message to a user during registration if name or email are already taken
+
 #### TODO:
 
-- registration form validation on frontend
-- display message to a user during registration if name or email are already taken
-- display message to a user during login if credentials are invalid
+- create README.md
+- registration form validation on frontend 4 pts.
+
