@@ -31,16 +31,22 @@ It is an application created for the Paymove recruitment process.
 
 #### Improvement Proposal view with comments:
 
-![IP view with comments]()
+![IpReviewerView](https://github.com/dmrozik87/paymove-recruitment-task/assets/116550191/1c23703e-29bb-4013-9dd4-186de6d8042a)
+
 
 #### Submitter Dashboard:
 
-![Submitter Dashboard]()
+![SubmitterDashboard](https://github.com/dmrozik87/paymove-recruitment-task/assets/116550191/e11d7a83-b445-4a24-9a4b-cbe2a31799cb)
+
+
 
 #### Reviewer Dashboard:
 
-![Reviewer Dashboard]()
+![ReviewerDashboard](https://github.com/dmrozik87/paymove-recruitment-task/assets/116550191/b809e88b-4b4e-418e-95dd-b5c9428e5676)
+
+
 
 #### Admin Dashboard:
 
-![Admin Dashboard]()
+![AdminDashboard](https://github.com/dmrozik87/paymove-recruitment-task/assets/116550191/17078c75-a9f9-496c-8759-8fc90e90cb79)
+
