@@ -39,4 +39,12 @@ public class CommentService {
         ImprovementProposal improvementProposal = improvementProposalRepository.findById(ipId).get();
         return commentRepository.findCommentsByImprovementProposalOrderByCreatedAt(improvementProposal);
     }
+
+    /**
+     * Deletes comment with specified id
+     * @param commentId UUID of a comment to delete
+     */
+    public void deleteComment(UUID commentId) {
+        commentRepository.deleteById(commentId);
+    }
 }

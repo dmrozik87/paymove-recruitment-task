@@ -40,4 +40,15 @@ public class CommentController {
         Set<Comment> comments = commentService.getCommentsByIpId(ipId);
         return ResponseEntity.ok(comments);
     }
+
+    /**
+     * Delete comment with specified Id
+     * @param commentId UUID of a comment to delete
+     * @return empty ResponseEntity
+     */
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<?> deleteComment(@PathVariable UUID commentId) {
+        commentService.deleteComment(commentId);
+        return ResponseEntity.ok(null);
+    }
 }

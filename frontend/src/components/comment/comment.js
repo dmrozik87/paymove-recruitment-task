@@ -1,6 +1,6 @@
 import {Card, Container} from "react-bootstrap";
 
-const Comment = ({comment}) => {
+const Comment = ({comment, isDeleteCommentButtonVisible, handleDelete}) => {
 
     const currentUser = localStorage.getItem("userId");
     const commentAuthor = comment.createdBy.userId;
@@ -21,6 +21,17 @@ const Comment = ({comment}) => {
                 <Card.Subtitle className="ms-1 text-muted"
                                style={{fontSize: "0.7em"}}>{dateTimeToDisplay}</Card.Subtitle>
                 <Card.Body>{comment.text}</Card.Body>
+                {isDeleteCommentButtonVisible ?
+                    <Card.Link
+                        style={{fontSize: "0.8em"}}
+                        role="button"
+                        className="text-end me-1 link-danger text-decoration-none coursor-pointer"
+                        onClick={() => handleDelete(comment.commentId)}>
+                        Delete
+                    </Card.Link>
+                    :
+                    <></>
+                }
             </Card>
         </Container>
 

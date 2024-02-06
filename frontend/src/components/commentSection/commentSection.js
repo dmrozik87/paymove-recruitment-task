@@ -59,6 +59,36 @@ const CommentSection = ({ipId, ipStatus}) => {
         }
     }
 
+    function isDeleteCommentButtonVisible(commentId, authorId) {
+        const currentUserId = localStorage.getItem("userId");
+        if (!isCommentLast(commentId)) return false;
+        else return isPostingAvailable() && authorId === currentUserId;
+    }
+
+    function isCommentLast(id) {
+        return comments[comments.length - 1].commentId === id;
+    }
+
+    function handleDelete(id) {
+        fetch(`http://localhost:8080/comments/${id}`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": localStorage.getItem("jwt")
+            },
+            method: "DELETE",
+        }).then(response => {
+            if (response.status === 200) {
+                deleteCommentFromState(id);
+            }
+        })
+    }
+
+    function deleteCommentFromState(id) {
+        const newComments = [...comments]
+            .filter(comment => comment.commentId !== id)
+        setComments(newComments);
+    }
+
     return (
         <Container className="d-flex justify-content-center align-items-center viewport-height">
             <Form className="w-75">
@@ -71,6 +101,8 @@ const CommentSection = ({ipId, ipStatus}) => {
                                         <Comment
                                             key={comment.commentId}
                                             comment={comment}
+                                            isDeleteCommentButtonVisible={isDeleteCommentButtonVisible(comment.commentId, comment.createdBy.userId)}
+                                            handleDelete={handleDelete}
                                         />)
                                 }
                             )}
