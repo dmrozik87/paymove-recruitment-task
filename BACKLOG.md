@@ -79,6 +79,11 @@ The application allows users to submit suggestions for improvements in the compa
     - display message to a user during registration if name or email are already taken
 - create README.md: 1 pt.
 
+#### 7.02.2024
+- allow to delete last comment: 3 pts.
+    - create endpoint to delete comment by id
+    - modify frontend: conditional rendering to allow deletion of last comment only of the current user if the improvement proposal has not been sent to the next stage
+
 #### TODO:
 
 - registration form validation on frontend 4 pts.
